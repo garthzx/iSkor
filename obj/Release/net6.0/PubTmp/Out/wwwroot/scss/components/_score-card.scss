@@ -1,0 +1,46 @@
+.score-card {
+    .competition-title {
+        background-color: #23262E;
+        font-family: $font-chakra-petch;
+    }
+
+    .list-container {
+        padding: 30px;
+        background-color: #363C48;
+
+        .list-group-item {
+            background-color: #3D4351;
+            color: $text-light-primary;
+            font-family: $font-inter;
+
+            .team-name {
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            .contestant-name {
+                font-size: 16px;
+                font-weight: 300;
+            }
+
+            .average-score {
+                font-weight: 300;
+                font-size: 20px;
+            }
+
+            i::before {
+                font-size: 12px;
+            }
+
+            .completed-status {
+                color: #50FF24;
+                font-size: 16px;
+            }
+
+            .pending-status {
+                color: #FF7324;
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/*@import "../lib/bootstrap-5.1.3/scss/bootstrap.scss";*/
+@import "../lib/bootstrap-5.1.3/scss/bootstrap.scss";
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/buttons";
+@import "components/dashboard";
+@import "components/entity-table";
+@import "components/form-card";
+@import "components/score-card";
+@import "components/display-score";
+
+@import "vendor/sweetalert";
+@import "vendor/select2";
+
+@import "layout/footer";
+@import "layout/header";
+
+// IMPORT PAGES BELOW
+@import "pages/landing-page";
+@import "pages/event-home";
+@import "pages/judge-home";
+@import "pages/score-contestant-page";
+@import "pages/page-not-found";
+@import "pages/access-denied";
+
+#rfs-test {
+    @include font-size(2rem);
+}

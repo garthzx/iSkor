@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Utils
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="login-header-nav navbar-nav d-flex align-items-center gap-3">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (User.IsInRole(AppRoles.EventHost) || User.IsInRole(AppRoles.Admin))
+        {
+            <li class="nav-item">
+                <a asp-page="/Event/Index" class="header-link">Events</a>
+            </li>
+        }
+        <li class="nav-item">
+            <div class="dropdown">
+                <button id="account-dropdown" class="btn btn-link dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person text-white"></i>
+                    <i class="bi bi-chevron-down text-white" style="font-size: 8px"></i>
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-start shadow" aria-labelledby="account-dropdown">
+                    <li>
+                        <form id="logoutForm" method="POST" class="form-inline" asp-page="/Auth/Logout">
+                            <button type="submit" class="btn nav-link dropdown-item px-2 py-3">Logout</button>
+                        </form>
+                    </li>
+                    <li>
+                        @if (User.IsInRole(AppRoles.Admin) || User.IsInRole(AppRoles.EventHost))
+                        {
+                            <a class="dropdown-item btn nav-link px-2 py-3">
+                                Account Settings
+                            </a>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link login" asp-page="/Auth/Login">Login</a>
+        </li>
+
+        <li class="nav-item me-3">
+            <a class="nav-link signup" asp-page="/Auth/Register">Sign up</a>
+        </li>
+    }
+</ul>

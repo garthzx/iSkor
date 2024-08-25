@@ -1,0 +1,15 @@
+footer.footer {
+    font-size: small;
+    background-color: rgba(39, 42, 51);
+    /*margin-top: 100px;*/
+    border-top: 1px solid rgba(#ccc, .2);
+    
+    .list-item a {
+        color: $text-light-tertiary;
+        text-decoration: none;
+    }
+
+    // .sub-text{
+    //     color: $text-light-secondary !important; // nasa may _typography.scss natin to para diko nadin send yun
+    // }
+}

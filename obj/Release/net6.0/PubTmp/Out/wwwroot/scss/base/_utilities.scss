@@ -1,0 +1,20 @@
+.empty-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+
+    .empty-page-title {
+        font-family: $font-chakra-petch;
+        text-align: center;
+    }
+}
+
+/*.form-control {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}*/
+
+.scoring-completed {
+    font-family: $font-chakra-petch;
+}

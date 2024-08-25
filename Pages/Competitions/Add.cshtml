@@ -1,0 +1,48 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Competitions.AddModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid) Model.Competition.EventId,
+    Selected = "competition",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Add a Competition</h1>
+                    <form method="POST">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input hidden asp-for="@Model.Competition.EventId" />
+
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Competition.Name"></label>
+                            <input class="form-control" asp-for="@Model.Competition.Name" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Competition.Description"></label>
+                            <textarea class="form-control" asp-for="@Model.Competition.Description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Competition.CategoryId"></label>
+                            @* @Html.DropDownListFor(m => m.Competition.CategoryId, Model.Categories, "- Select Category -") *@
+                            <select class="form-select" asp-for="@Model.Competition.CategoryId" asp-items="@Model.Categories">
+                                <option disabled selected class="text-muted">- Select Category -</option>
+                            </select>
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btn-global" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+﻿@page
+@model EventScoringWeb.Pages.Account.LoginModel
+@{
+    Layout = "_NoDashboardLayout";
+}
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Log in</h1>
+                    <form method="POST" asp-route-returnUrl="@ViewData["ReturnUrl"]" role="form">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.InputModel.Email"></label>
+                            <input class="form-control" type="email" asp-for="@Model.InputModel.Email" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.InputModel.Password"></label>
+                            <input class="form-control" type="password" asp-for="@Model.InputModel.Password" />
+                        </div>
+                        <div class="mb-3 form-check">
+                            <label class="form-check-label" asp-for="@Model.InputModel.RememberMe"></label>
+                            @* <span>@Html.DisplayNameFor(m => m.InputModel.RememberMe)</span> *@
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.InputModel.RememberMe" />
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-global">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

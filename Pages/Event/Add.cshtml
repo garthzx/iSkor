@@ -1,0 +1,39 @@
+﻿@page
+@model EventScoringWeb.Pages.Event.AddModel
+@{
+    Layout = "_NoDashboardLayout";
+}
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Add an Event</h1>
+                    <form method="post">
+                        <input asp-for="Event.EventId" hidden />
+                        <input asp-for="Event.ApplicationUserId" hidden />
+                        <input asp-for="Event.Url" hidden />
+                        <div asp-validation-summary="All"></div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="Event.EventName"></label>
+                            <input class="form-control" asp-for="Event.EventName" />
+                            <span asp-validation-for="Event.EventName"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="Event.EventStartDate"></label>
+                            <input class="form-control" type="date" asp-for="Event.EventStartDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="Event.EventEndDate"></label>
+                            <input class="form-control" type="date" asp-for="Event.EventEndDate" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-global">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

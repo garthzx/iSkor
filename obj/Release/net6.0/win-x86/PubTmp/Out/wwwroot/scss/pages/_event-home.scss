@@ -1,0 +1,54 @@
+.event-home {
+    .list-group-event {
+        background-color: $dark-secondary !important;
+        border: none;
+
+
+        .list-group-item {
+            margin: 5px 0;
+            color: $text-light-primary !important;
+            background-color: $dark-card;
+            padding: 15px;
+            border-radius: 0px;
+
+            &:hover {
+                background-color: $orange-primary;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $text-light-primary;
+        }
+    }
+
+    .list-group-status {
+        background-color: $dark-secondary !important;
+        border: none;
+
+        .list-group-item {
+            margin: 5px 0;
+            color: $text-light-primary !important;
+            background-color: $dark-card-active !important;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: $text-light-primary;
+        }
+    }
+
+    .searchbar {
+        width: 100%;
+        max-width: 300px;
+        padding: 8px 10px;
+        background-color: $dark-tertiary !important;
+        color: $text-light-primary !important;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

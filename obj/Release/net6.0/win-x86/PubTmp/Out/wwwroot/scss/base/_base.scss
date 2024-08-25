@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+/*    display: flex;
+    justify-content: center;*/
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $font-inter;
+    min-height: 100vh;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #272a33;
+    color: $text-light-primary;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+::selection {
+    background-color: $orange-primary;
+    color: $text-light-primary;
+}
+
+#wrapper {
+    min-height: 650px;
+    position: relative;
+    padding-left: 200px;
+    /*padding-left: 0;*/
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    background-color: #272a33;
+
+    &.closed {
+        padding-left: 0px;
+    }
+
+}
+
+#page-content-wrapper {
+    margin: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+// MIKAEL
+input {
+    background-color: $dark-tertiary !important;
+    color: $text-light-primary !important;
+
+    textarea {
+        background-color: $dark-tertiary !important;
+        color: $text-light-primary !important;
+    }
+}
+// END MIKAEL
+
+.form-control,
+.form-select {
+    background-color: #303540;
+    color: $text-light-primary;
+    outline: none;
+    border: none;
+    font-family: $font-chakra-petch;
+
+    &:focus, &:active {
+        box-shadow: 0 0 0 0.20rem rgba($orange-primary, .25) !important;
+        color: inherit;
+        background-color: inherit;
+    }
+}
+
+.form-control[disabled] {
+    background-color: #545865 !important;
+}
+
+.form-select {
+    background-image: url("/assets/shared/chevron-down.svg");
+    color: white;
+}
+
+.form-select[multiple] {
+    background-image: none;
+}
+
+.form-check-input {
+    border: 1px solid #eee;
+
+    &:focus, &:active {
+        box-shadow: 0 0 0 0.20rem rgba($orange-primary, .25) !important;
+        border-color: $orange-primary;
+    }
+
+    &:checked {
+        border-color: $orange-primary;
+    }
+}

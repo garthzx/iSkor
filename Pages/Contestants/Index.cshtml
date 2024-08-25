@@ -1,0 +1,76 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Contestants.IndexModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = Model.EventId,
+    Selected = "contestant",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h1 page-title">Contestants</h1>
+            <div>
+                <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Contestant</a>
+            </div>
+        </div>
+
+        <div>
+            @if (Model.Contestants.Count() == 0)
+            {
+                <div class="empty-page-container">
+                    <h1 class="h1 empty-page-title">
+                        It seems you currently do not have any contestants set.
+                    </h1>
+                    <div>
+                        <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Contestant</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-dark entity-table">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Team</th>
+                                <th>Competition</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var contestant in Model.Contestants)
+                            {
+                                <tr>
+                                    <td>@contestant.FullName</td>
+                                    <td>@contestant.Team.Abbreviation</td>
+                                    <td>@contestant.Competition.Name</td>
+                                    <td>
+                                        <div class="m-1">
+                                            <a class="btn text-white" asp-page="Edit" asp-route-eventId="@contestant.EventId" asp-route-contestantId="@contestant.ContestantId">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                            <form class="d-inline delete-form" method="POST" asp-page="Index" asp-page-handler="Delete" asp-route-id="@contestant.ContestantId">
+                                                <input asp-for="@Model.EventId" hidden />
+                                                <button type="submit" class="btn text-white">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,195 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EventScoringWeb
+build_property.RootNamespace = EventScoringWeb
+build_property.ProjectDir = C:\Users\gotfa\source\repos\EventScoring\EventScoringWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\gotfa\source\repos\EventScoring\EventScoringWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Auth/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Categories/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Competitions/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGV0aXRpb25zXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Competitions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGV0aXRpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Competitions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGV0aXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Contestants/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVzdGFudHNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Contestants/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVzdGFudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Contestants/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVzdGFudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Criteria/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JpdGVyaWFcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Criteria/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JpdGVyaWFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Criteria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JpdGVyaWFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Event/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Event/EventSingle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcRXZlbnRTaW5nbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Judge/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVkZ2VcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Judge/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVkZ2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Judge/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVkZ2VcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Judge/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVkZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Judge/ScoreContestant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVkZ2VcU2NvcmVDb250ZXN0YW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/PageNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZU5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Scores/Display.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NvcmVzXERpc3BsYXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Scores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2NvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/Components/Dashboard/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcRGFzaGJvYXJkXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/Components/Footer/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/Components/Header/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/_AuthenticatedLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BdXRoZW50aWNhdGVkTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/_NoDashboardLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Ob0Rhc2hib2FyZExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/_ScoreLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TY29yZUxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Teams/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Teams/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/Teams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gotfa/source/repos/EventScoring/EventScoringWeb/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

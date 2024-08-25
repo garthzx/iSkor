@@ -1,0 +1,55 @@
+﻿@using EventScoringWeb.ViewComponents
+@model DashboardViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div id="sidebar-wrapper">
+    <div class="sidebar-nav nav-pills nav-stacked list-group list-group-flush gap-2" id="menu">
+        <h6 class="h6 event-name m-0">
+            @Model.EventName
+        </h6>
+        <a asp-page="/Event/EventSingle" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="standings">
+            Standings
+        </a>
+        <a asp-page="/Scores/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="scores">
+            Scores
+        </a>
+        <div class="dashboard-divider">
+            <div class="text-nowrap">Event Management</div>
+        </div>
+        <a asp-page="/Categories/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="category">
+            Category
+        </a>
+        <a asp-page="/Competitions/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="competition">
+            Competition
+        </a>
+        <a asp-page="/Criteria/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="criteria">
+            Criteria
+        </a>
+        <a asp-page="/Teams/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="team">
+            Team
+        </a>
+        <a asp-page="/Contestants/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="contestant">
+            Contestant
+        </a>
+        <div class="dashboard-divider">
+            <div class="text-nowrap">Accounts Management</div>
+        </div>
+        <a asp-page="/Judge/Index" asp-route-eventId="@Model.EventId" class="list-group-item border-0 rounded-pill" data-selectId="judges">
+            Judges
+        </a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function (event) {
+        console.log($ === jQuery)
+
+        var selected = document.querySelector('[data-selectId="@Model.Selected"]');
+        selected.classList.toggle("active");
+    });
+
+</script>

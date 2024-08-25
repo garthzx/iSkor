@@ -1,0 +1,38 @@
+.entity-table {
+
+    &-small {
+        max-width: 400px;
+    }
+
+    &-full {
+        max-width: 100% !important;
+    }
+
+    max-width: 1000px;
+
+    thead {
+        background-color: #373C49;
+        border-bottom: 2px solid $orange-primary;
+
+        tr, th {
+            background-color: inherit;
+            border-bottom: 1px solid $orange-primary;
+            font-size: 14px;
+        }
+    }
+
+    tbody {
+        background-color: #2C303A;
+
+        tr, td {
+            background-color: inherit;
+            border-bottom: 1px solid #272A33;
+            font-size: 14px;
+        }
+    }
+
+    .input-score.form-control.invalid {
+        background-color: rgba(#CE2029, .50)!important;
+        box-shadow: 0 0 0 0.25rem rgba(#BF0A30, 0.25) !important;
+    }
+}

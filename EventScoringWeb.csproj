@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\scss\abstracts\_functions.scss" />
+    <None Include="wwwroot\scss\abstracts\_mixins.scss" />
+    <None Include="wwwroot\scss\abstracts\_variables.scss" />
+    <None Include="wwwroot\scss\base\_animations.scss" />
+    <None Include="wwwroot\scss\base\_base.scss" />
+    <None Include="wwwroot\scss\base\_typography.scss" />
+    <None Include="wwwroot\scss\base\_utilities.scss" />
+    <None Include="wwwroot\scss\components\_buttons.scss" />
+    <None Include="wwwroot\scss\layout\_footer.scss" />
+    <None Include="wwwroot\scss\layout\_header.scss" />
+    <None Include="wwwroot\scss\pages\_landing-page.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.24">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="RandomDataGenerator.Net" Version="1.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventScoring.Data\EventScoring.DataAccess.csproj" />
+    <ProjectReference Include="..\EventScoring.Models\EventScoring.Models.csproj" />
+    <ProjectReference Include="..\Utils\Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\ManageAccount\" />
+  </ItemGroup>
+
+</Project>

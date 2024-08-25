@@ -1,0 +1,58 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Judge.EditModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid)Model.Input.EventId,
+    Selected = "judges",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Edit Judge</h1>
+                    <form method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input hidden asp-for="@Model.Input.EventId" />
+                        <input hidden asp-for="@Model.Input.Id"/>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Input.FirstName"></label>
+                            <input class="form-control" asp-for="@Model.Input.FirstName" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Input.LastName"></label>
+                            <input class="form-control" asp-for="@Model.Input.LastName" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Input.Email"></label>
+                            <input class="form-control" asp-for="@Model.Input.Email" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Input.SelectedCompetitions"></label>
+                            <select class="multiselect multiselect-competitions form-select" asp-for="@Model.Input.SelectedCompetitions" multiple="multiple" asp-items="@Model.CompetitionList">
+                            </select>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-global">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.multiselect-competitions').select2();
+        });
+    </script>
+}

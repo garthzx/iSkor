@@ -1,0 +1,80 @@
+﻿@page
+@model EventScoringWeb.Pages.Judge.HomeModel
+
+@using System.Security.Claims
+
+@{
+    Layout = "_NoDashboardLayout";
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+}
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="judge-home-header mb-5">
+            <h1 class="h1 page-title mb-4">@Model.JudgeHomeVM.Event.EventName</h1>
+            <p class="event-description text-secondary">
+                Welcome judge! Below you will find the contestants that you need to score. Simply click on
+                a contestant item below and it will take you to the scoring page.
+            </p>
+        </div>
+        @foreach (var competition in Model.JudgeHomeVM.Competitions)
+        {
+            <div class="score-card mb-5">
+                <div class="competition-title">
+                    <h6 class="h6 m-0 py-2 ps-3">@competition.Name</h6>
+                </div>
+
+                <div class="list-container">
+                    <div class="list-group contestant-list">
+                        @foreach (var contestant in competition.Contestants)
+                        {
+                            <a 
+                                class="list-group-item mb-3 p-3" 
+                                asp-page="ScoreContestant" 
+                                asp-route-competitionId="@competition.CompetitionId" 
+                                asp-route-contestantId="@contestant.ContestantId">
+
+                                <div class="row">
+                                    <div class="col-12 col-md-7">
+                                        <div class="d-flex flex-column justify-content-center ">
+                                            <h5 class="team-name">@contestant.Team.FullName</h5>
+                                            <h6 class="contestant-name">@contestant.FullName</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 offset-md-2 col-md-3 text-end d-flex align-items-center justify-content-end">
+                                        @{
+                                            // Get all scores from contestant that the current has already scored
+                                            var scores = contestant.Scores.Where(u => u.JudgeId == userId);
+
+                                            // get total number of criteria for the competition
+                                            var criteriaCount = competition.Criteria.Count();
+
+                                            // if scores.Count() is not equal to criteriaCount,
+                                            // judge user has not completed scoring
+                                            if (scores.Count() != criteriaCount)
+                                            {
+                                                <div class="pending-status d-flex align-items-center gap-2">
+                                                    <i class="bi bi-circle-fill align-middle"></i>
+                                                    <div class="m-0">Pending</div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="completed-status d-flex align-items-center gap-2">
+                                                    <i class="bi bi-circle-fill align-middle"></i>
+                                                    <div class="m-0">Completed</div>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

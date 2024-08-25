@@ -1,0 +1,106 @@
+.navbar {
+    background-color: #272a33 !important;
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+    /*box-shadow: rgba(0, 0, 0, .80) 0px 2px 4px;*/
+    border-bottom: 1px solid #18191A;
+    z-index: 10;
+
+    .username {
+        color: #FBFBFD;
+        font-family: $font-chakra-petch;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .header-link {
+        text-decoration: none;
+        color: #FBFBFD !important;
+
+        &:hover {
+            color: $orange-primary !important;
+        }
+    }
+
+    .login {
+        padding: 6px 28px !important;
+        background-color: #454D60;
+        font-family: $font-chakra-petch;
+        color: white;
+        border-radius: 20px;
+
+        &:hover {
+            background-color: rgba(#454D60, .8);
+        }
+    }
+
+    .signup {
+        padding: 6px 20px !important;
+        background-color: $orange-primary;
+        font-family: $font-chakra-petch;
+        color: white;
+        border-radius: 20px;
+
+        &:hover {
+            background-color: #CC4A00;
+        }
+    }
+
+    #menu-toggle {
+        color: #ccc;
+        font-size: 24px;
+
+        &:focus, &:active {
+            color: $orange-primary;
+        }
+    }
+}
+
+.login-header-nav {
+    .dropdown {
+        .dropdown-menu {
+            border-radius: 0px;
+            left: -100px;
+            top: 110%;
+            padding: 0;
+            background-color: #20232A;
+            transform: scale(0);
+            transform-origin: top right;
+            transition: transform .15s ease-in-out;
+            display: block !important;
+
+            .dropdown-item {
+                border-radius: 0px;
+                font-size: 12px;
+                color: #B3B3B3;
+
+                &:hover, &:active, &:focus {
+                    background-color: $orange-primary;
+                    color: $text-light-primary;
+                }
+
+                &:active, &:focus {
+                    box-shadow: 0 0 0 0.20rem rgba($orange-primary, 0.25);
+                }
+            }
+        }
+
+        .dropdown-menu.show {
+            transform: scale(1.0);
+        }
+    }
+}
+
+#account-dropdown {
+
+    &:hover i::before {
+        color: $orange-primary !important;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &::after {
+        display: none;
+    }
+}

@@ -1,0 +1,96 @@
+﻿@page 
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Categories.IndexModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = Model.EventId,
+    Selected = "category",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h1 page-title">Categories</h1>
+            <div>
+                <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Category</a>
+            </div>
+        </div>
+
+        <div class="dropdown mb-3">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort by: @Model.Sorter.Selected.SelectorName
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                @foreach (var sortOption in Model.Sorter.SortOptions)
+                {
+                    <li>
+                        <a class="dropdown-item" asp-page="Index" asp-route-sortOrder="@sortOption.SelectorName" asp-route-eventid="@Model.EventId">
+                            @sortOption.SelectorName
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div>
+            @if (Model.Categories.Count() == 0)
+            {
+                <div class="empty-page-container">
+                    <h1 class="h1 empty-page-title">
+                        It seems you currently do not have any categories set.
+                    </h1>
+                    <div>
+                        <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Category</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (var category in Model.Categories)
+                {
+                    <div class="mb-4" style="max-width: 400px;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="h3 mb-3">@category.Name</h3>
+                            <div>
+                                <a class="btn text-white" asp-page="Edit" asp-route-id="@category.CategoryId">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <form class="d-inline delete-form" method="POST" asp-page="Index" asp-page-handler="Delete">
+                                    <input hidden asp-for="@category.CategoryId" />
+                                    <input hidden asp-for="@category.Name" />
+                                    <button type="submit" class="btn text-white">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                                @*Buttons here*@
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-dark entity-table entity-table-small">
+                                <thead>
+                                    <tr>
+                                        <th>Competition</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var competition in category.Competitions)
+                                    {
+                                        <tr>
+                                            <td>@competition.Name</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+               
+
+            }
+        </div>
+    </div>
+</div>

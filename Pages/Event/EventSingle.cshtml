@@ -1,0 +1,54 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Event.EventSingleModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = Model.Event.EventId,
+    Selected = "standings",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <h1 class="h1 page-title mb-3">@Model.Event.EventName</h1>
+        <div>
+            @* <h2 class="text-warning">TODO: edit in Pages/Contestants folder because you added a new property. </h2> *@
+            <table class="table table-dark entity-table">
+                <thead>
+                    <tr>
+                        <th>Competition</th>
+                        <th>Champion</th>
+                        <th>Team</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.ViewModel.Rows)
+                    {
+                        <tr>
+                            <td>@row.Competition.Name</td>
+                            <td>
+                                @foreach (var champion in row.ContestantChampions)
+                                {
+                                    <div>@champion.FullName</div>
+                                }
+                            </td>
+                            <td>
+                                @foreach (var champion in row.ContestantChampions)
+                                {
+                                    <div>@champion.Team.Abbreviation</div>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+}

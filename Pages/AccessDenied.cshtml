@@ -1,0 +1,20 @@
+﻿@page
+@model EventScoringWeb.Pages.AccessDeniedModel
+@{
+    Layout = "_NoDashboardLayout";
+}
+
+<div class="page-error-container">
+    <div class="page-error-container2 row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="m-2 mt-5 text-center">
+                <h1 class="p-5 page-error-title">403</h1>
+                <h2 class="page-error-heading text-uppercase">Access Denied</h2>
+                <p class="page-error-p">Oops! You don't have permission to access this page.</p>
+            </div>
+        </div>
+        <div class="m-2 text-center">
+            <a class="btn btn-global" asp-page="/Index">Go Back</a>
+        </div>
+    </div>
+</div>

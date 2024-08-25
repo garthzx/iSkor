@@ -1,0 +1,92 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Judge.IndexModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid)Model.EventId,
+    Selected = "judges",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        @if (ViewData.ContainsKey("delete-error"))
+        {
+            <p class="text-danger">
+                @ViewData["delete-error"]
+            </p>
+        }
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h1 page-title">Judges</h1>
+            <div>
+                <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Judge</a>
+            </div>
+        </div>
+@*         <div class="my-2">
+            <a asp-page="Home" class="btn btn-link">Go to judge home</a>
+        </div>
+ *@
+        <div>
+            @if (Model.Judges.Count() == 0)
+            {
+                <div class="empty-page-container">
+                    <h1 class="h1 empty-page-title">
+                        It seems you currently do not have any judges added.
+                    </h1>
+                    <div>
+                        <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Judge</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-dark entity-table">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Competitions</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var judge in Model.Judges)
+                            {
+                                <tr>
+                                    <td>@judge.FullName</td>
+                                    <td>@judge.UserName</td>
+                                    <td>@judge.Email</td>
+                                    <td>
+                                        @foreach (var competition in judge.Competitions)
+                                        {
+                                            <div class="p-1">@competition.Name</div>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="m-1">
+                                            <a class="btn text-white" asp-page="Edit" asp-route-eventId="@Model.EventId" asp-route-id="@judge.Id">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                            <form class="d-inline delete-form" method="POST" asp-page="Index" asp-page-handler="Delete" asp-route-id="@judge.Id" asp-route-eventId="@Model.EventId">
+                                                <input asp-for="@Model.EventId" hidden />
+                                                <button type="submit" class="btn text-white">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

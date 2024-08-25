@@ -1,0 +1,63 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Criteria.AddModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid)Model.EventId,
+    Selected = "criteria",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Add a Criterion</h1>
+                    <form method="POST">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input hidden asp-for="@Model.EventId" />
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Criterion.Name"></label>
+                            <input class="form-control" asp-for="@Model.Criterion.Name" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Criterion.Description"></label>
+                            <textarea class="form-control" asp-for="@Model.Criterion.Description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Criterion.PercentFromTotal"></label>
+                            <input class="form-control percent-from-total" type="number" value="0" asp-for="@Model.Criterion.PercentFromTotal" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-secondary" asp-for="@Model.Criterion.CompetitionId"></label>
+                            <select class="form-select" asp-for="@Model.Criterion.CompetitionId" asp-items="@Model.Competitions">
+                                <option disabled selected class="text-muted">- Select Competition -</option>
+                            </select>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-global">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(".percent-from-total").each(function (index) {
+            $(this).on("input", e => {
+                if ($(this).val() == "") { 
+                    $(this).val("0");
+                }
+            });
+        });
+    </script>
+}
+

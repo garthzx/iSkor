@@ -1,0 +1,34 @@
+.btn-global {
+    /*padding: 6px 20px !important;*/
+    background-color: $orange-primary;
+    font-family: $font-chakra-petch;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #CC4A00;
+        color: rgba(white, .7);
+    }
+
+    &:focus, &:active {
+        box-shadow: 0 0 0 0.25rem rgba($orange-primary, 0.25);
+    }
+}
+
+// MIKAEL
+.btn-crt-event {
+    background-color: $orange-primary;
+    font-size: 1rem;
+    color: $text-light-primary;
+    padding: 10px 30px;
+    transition: all .2s linear;
+    outline: none;
+    border: none;
+    text-decoration: none;
+
+    &:hover {
+        color: $text-light-primary;
+    }
+}
+// END MIKAEL

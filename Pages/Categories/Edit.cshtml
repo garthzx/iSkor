@@ -1,0 +1,37 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Categories.EditModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = Model.EventId,
+    Selected = "category",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Add Category</h1>
+                    <form method="POST">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input hidden asp-for="@Model.Category.CategoryId" />
+                        <input hidden asp-for="@Model.Category.EventId" />
+                        <div class="mb-3">
+                            <label class="form-label" asp-for="@Model.Category.Name"></label>
+                            <input class="form-control" asp-for="@Model.Category.Name" />
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-global">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

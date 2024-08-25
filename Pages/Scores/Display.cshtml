@@ -1,0 +1,71 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Scores.DisplayModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid)Model.ScoresVM.Competition.EventId,
+    Selected = "standings",
+})
+
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <h1 class="h1 page-title text-center">@Model.ScoresVM.Competition.Event.EventName</h1>
+        <h2 class="h2 page-title text-center mb-5" style="color: #FF7324;">@Model.ScoresVM.Competition.Name</h2>
+
+        <div class="score-card-container">
+            <div class="row score-card-list justify-content-center">
+                @foreach (var contestant in Model.ScoresVM.Contestants)
+                {
+                    <div class="col-12 col-md-4 col-lg-3 mb-4">
+                        <div class="display-score-card ">
+                            <div class="score-box">
+                                <div class="score-container d-flex align-items-center justify-content-center">
+                                    <span>
+                                        @Math.Round((decimal)contestant.AverageScore, 2)
+                                    </span>
+                                </div>
+
+                                <div class="score-box-question-overlay d-flex align-items-center justify-content-center">
+                                    <span>
+                                        ?
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="contestant-team">@contestant.Team.Abbreviation</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        $(".score-box-question-overlay").on("transitionend webkitTransitionEnd oTransitionEnd", function (event) {
+            $(this).prev().css("opacity", 1);
+            $(this).css("visibility", "hidden");
+        });
+
+        $(".score-box-question-overlay").on("click", function (e) {
+            $(this).toggleClass("closed");
+        });
+
+
+        // make the sidebar closed by default
+        $("#sidebar-wrapper").toggleClass("closed");
+        $("#wrapper").toggleClass("closed");
+
+        var expand = document.querySelector(".bi-arrows-expand-vertical");
+        var collapse = document.querySelector(".bi-arrows-collapse-vertical");
+
+        expand.classList.toggle("d-none");
+        collapse.classList.toggle("d-none");    
+    </script>
+}

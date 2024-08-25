@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm px-1 shadow-md">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-page="/Index">
+                <img src="~/assets/shared/logo-no-background.svg" alt="iSkor" width="60" height="40"/>
+            </a>
+            <button type="button" class="btn navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
+                <i class="bi bi-arrows-expand-vertical"></i>
+                <i class="bi bi-arrows-collapse-vertical d-none"></i>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <div class="nav-link text-white username">@UserManager.GetUserName(User)</div>
+                        
+                        @* <a class="nav-link text-dark" asp-page="/Index">Home</a> *@
+                    </li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+                @*<partial name="_LoginPartialCustom" />*@
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    var menuToggle = document.getElementById("menu-toggle");
+    menuToggle.addEventListener("click", e => {
+        var expand = document.querySelector(".bi-arrows-expand-vertical");
+        var collapse = document.querySelector(".bi-arrows-collapse-vertical");
+
+        expand.classList.toggle("d-none");
+        collapse.classList.toggle("d-none");
+    });
+</script>

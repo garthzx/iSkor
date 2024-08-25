@@ -1,0 +1,49 @@
+.swal2-container {
+    font-family: $font-chakra-petch;
+
+    .swal2-popup {
+        color: $text-light-primary;
+        background-color: #2C303A;
+
+        .swal2-icon {
+            color: $orange-primary;
+            border-color: $orange-primary;
+        }
+
+        .swal2-confirm {
+            /*padding: 6px 20px !important;*/
+            background-color: $orange-primary !important;
+            font-family: $font-chakra-petch !important;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #CC4A00;
+                color: rgba(white, .7);
+            }
+
+            &:focus, &:active {
+                box-shadow: 0 0 0 0.25rem rgba($orange-primary, 0.25);
+            }
+        }
+
+        .swal2-cancel {
+            /*padding: 6px 20px !important;*/
+            background-color: #454D60 !important;
+            font-family: $font-chakra-petch !important;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #CC4A00;
+                color: rgba(white, .7);
+            }
+
+            &:focus, &:active {
+                box-shadow: 0 0 0 0.25rem rgba(#454D60, 0.25);
+            }
+        }
+    }
+}

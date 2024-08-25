@@ -1,0 +1,66 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Competitions.IndexModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = Model.EventId,
+    Selected = "competition",
+})
+
+
+@if (Model.Competitions.Count() == 0)
+{
+    <h1></h1>
+}
+
+<div id="page-content-wrapper">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h1 page-title">Competitions</h1>
+            <div>
+                <a asp-page="Add" class="btn btn-global" asp-route-eventId="@Model.EventId">Add Competition</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-dark entity-table">
+                <thead>
+                    <tr>
+                        <th>Competition</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var competition in Model.Competitions)
+                    {
+                        <tr>
+                            <td>@competition.Name</td>
+                            <td>@competition.Description</td>
+                            <td>@competition.Category.Name</td>
+                            <td>
+                                <div>
+                                    <a class="btn text-white" asp-page="Edit" asp-route-id="@competition.CompetitionId">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <form class="d-inline delete-form" method="POST" asp-page="Index" asp-page-handler="Delete">
+                                        <input hidden name="eventId" value="@Model.EventId" />
+                                        <input hidden name="id" value="@competition.CompetitionId" />
+                                        <button type="submit" class="btn text-white delete-btn">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.page-error-container {
+    height: 700px;
+    background: radial-gradient(110.05% 134.26% at -1.11% 98.26%, #272A33 0%, rgba(26, 19, 19, 0.97) 44.78%, rgba(87, 38, 22, 0.90) 70.3%, rgba(172, 59, 16, 0.80) 100%);
+
+    .page-error-title {
+        font-family: $font-chakra-petch;
+        color: $orange-primary;
+        font-size: 140px;
+        word-wrap: break-word;
+        text-shadow: 2px 2px #ff0000;
+    }
+
+    .page-error-heading {
+        font-family: $font-chakra-petch;
+        color: $text-light-primary;
+        font-size: 40px;
+        word-wrap: break-word;
+        text-shadow: 2px 2px $text-light-tertiary;
+    }
+
+    .page-error-p {
+        font-family: $font-inter;
+        color: $text-light-secondary;
+        font-size: 17px;
+        font-weight: 400;
+        word-wrap: break-word;
+        padding: 0 !important;
+    }
+
+    .page-error-container2 {
+        padding-top: 5%;
+    }
+
+    .btn-error-page {
+        background: $orange-primary;
+        font-family: $font-chakra-petch;
+        color: $text-light-primary;
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+    }
+}

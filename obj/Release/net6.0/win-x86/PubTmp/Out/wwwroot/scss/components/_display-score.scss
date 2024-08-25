@@ -1,0 +1,39 @@
+.display-score-card {
+    font-family: $font-chakra-petch;
+    font-size: 100px;
+
+    .score-box {
+        height: 250px;
+        border-radius: 5px;
+        position: relative;
+        border: 2px solid #4E5360;
+        background: linear-gradient(180deg, #272A33 18.08%, #683222 58.01%, #AC3B10 100%);
+
+        .score-container {
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s linear;
+        }
+
+        .score-box-question-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 250px;
+            width: 100%;
+            opacity: 1;
+            z-index: 5;
+            cursor: pointer;
+            transition: opacity 0.5s linear;
+
+            &.closed {
+                opacity: 0;
+            }
+        }
+    }
+
+    .contestant-team {
+        font-size: 70px;
+        text-align: center;
+    }
+}

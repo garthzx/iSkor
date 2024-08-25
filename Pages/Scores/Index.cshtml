@@ -1,0 +1,102 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Scores.IndexModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid)Model.EventId,
+    Selected = "scores",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <h1 class="h1 page-title mb-4">Scores</h1>
+
+        @foreach (var vm in Model.ScoresVM)
+        {
+            <div class="score-card mb-5">
+                <div class="competition-title d-flex justify-content-between">
+                    <h6 class="h6 m-0 py-2 ps-3">@vm.Competition.Name</h6>
+                    <div>
+                        <a asp-page="Display"
+                           asp-route-eventId="@Model.EventId"
+                           asp-route-competitionId="@vm.Competition.CompetitionId"
+                           class="btn btn-link"
+                           style="color: #FF7324;">Display</a>
+                    </div>
+                </div>
+
+                <div class="list-container">
+                    <div class="list-group contestant-list">
+                        @{
+                            bool stop = false;
+                            var rank = 0;
+                        }
+                        @foreach (var contestant in vm.Contestants)
+                        {
+                            @if (rank == 3)
+                            {
+                                stop = true;
+                            }
+                            <a class="list-group-item mb-3 p-3">
+                                <div class="row">
+                                    <div class="col-12 col-md-7">
+                                        <div class="d-flex align-items-center">
+                                            <div class="rank-container me-3">
+                                                <span class="rank-text">
+                                                    @{
+                                                        rank++;
+                                                    }
+                                                    @if (!stop)
+                                                    {
+                                                        <text>@rank</text>
+                                                    }
+                                                </span>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h5 class="team-name">@contestant.Team.FullName</h5>
+                                                <h6 class="contestant-name">@contestant.FullName</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-2 d-flex align-items-center justify-content-center">
+                                        <h4 class="m-0 average-score">@contestant.AverageScore %</h4>
+                                    </div>
+                                    <div class="col-12 col-md-3 text-end d-flex align-items-center justify-content-end">
+                                        @if (contestant.IsCompleted == true)
+                                        {
+                                            <div class="completed-status d-flex align-items-center gap-2">
+                                                <i class="bi bi-circle-fill align-middle"></i>
+                                                <div class="m-0">Completed</div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="pending-status d-flex align-items-center gap-2">
+                                                <i class="bi bi-circle-fill align-middle"></i>
+                                                <div class="m-0">Pending</div>
+                                            </div>
+                                        }
+                                    </div>
+
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+<style>
+    .list-container .rank-text {
+        color: #FF7324;
+    }
+</style>
+

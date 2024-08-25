@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "_NoDashboardLayout";
+}
+
+<div class="landingpage-container ">
+    <div >
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="wrapper m-2 mt-4 text-center">
+                    <h1 class="p-5 landing-page-title">Event Scoring System</h1>
+                    <p class="landing-page-p mb-5">
+                        Elevate your school events with our advanced scoring system.
+                        The Event Scoring System is designed to streamline the scoring
+                        process for a variety of competitions, providing a seamless
+                        experience for organizers, participants, and judges.
+                    </p>
+                </div>
+                <div class="m-2 text-center">
+                    <a class="btn btn-global" asp-page="/Auth/Register">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@page
+@using EventScoringWeb.ViewComponents
+@model EventScoringWeb.Pages.Teams.EditModel
+@{
+    Layout = "_AuthenticatedLayout";
+}
+
+@await Component.InvokeAsync("Dashboard", new DashboardViewModel()
+{
+    EventId = (Guid)Model.Team.EventId,
+    Selected = "team",
+})
+
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7">
+                <div class="form-card">
+                    <h1 class="h1 form-title">Edit Team</h1>
+
+                    <form method="POST">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input hidden asp-for="@Model.Team.EventId" />
+                        <input hidden asp-for="@Model.Team.TeamId"/>
+                        <div class="mb-3 text-secondary">
+                            <label class="form-label" asp-for="@Model.Team.FullName"></label>
+                            <input class="form-control" asp-for="@Model.Team.FullName" />
+                        </div>
+                        <div class="mb-3 text-secondary">
+                            <label class="form-label" asp-for="@Model.Team.Abbreviation"></label>
+                            <input class="form-control" asp-for="@Model.Team.Abbreviation" />
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-global">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

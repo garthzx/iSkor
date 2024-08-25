@@ -1,0 +1,41 @@
+.form-card {
+    background-color: #2C303A;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    font-family: $font-chakra-petch;
+
+    .form-title {
+        font-family: inherit;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $orange-primary;
+    }
+
+    .form-control,
+    .form-select {
+        background-color: #303540;
+        color: $text-light-primary;
+        outline: none;
+        border: none;
+        font-family: $font-chakra-petch;
+
+        &:focus, &:active {
+            box-shadow: 0 0 0 0.20rem rgba($orange-primary, .25) !important;
+        }
+    }
+
+    .form-select {
+        background-image: url("/assets/shared/chevron-down.svg");
+        color: white;
+    }
+
+    .form-select[multiple] {
+        background-image: none;
+    }
+    /*    select.multiselect {
+        color:
+    }
+*/
+
+
+}
+

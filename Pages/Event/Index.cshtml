@@ -1,0 +1,109 @@
+﻿@page
+@model EventScoringWeb.Pages.Event.IndexModel
+
+@{
+    Layout = "_NoDashboardLayout";
+}
+
+<div class="event-home my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="h3 page-title">Events</h3>
+            </div>
+            <div class="col-md-4 text-end">
+                <a class="btn btn-global rounded-pill" asp-page="Add">
+                    Create Event
+                </a>
+            </div>
+        </div>
+        <form class="d-flex">
+            <input class="searchbar me-2 form-control" type="search" placeholder="Search" aria-label="Search" />
+        </form>
+        <div class="dropdown mb-5">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort by: @Model.Sorter.Selected.SelectorName
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                @foreach (var sortOption in Model.Sorter.SortOptions)
+                {
+                    <li>
+                        <a class="dropdown-item" asp-page="Index" asp-route-sortOrder="@sortOption.SelectorName">
+                            @sortOption.SelectorName
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="list-group-event">
+                    <div class="list-group">
+                        @foreach (var eventModel in Model.Events)
+                        {
+                            <div>
+                                <a class="btn text-white" asp-page="Edit" asp-route-id="@eventModel.EventId">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <form class="d-inline delete-form" method="POST" asp-page="Index" asp-page-handler="Delete" asp-route-id="@eventModel.EventId">
+                                    <button type="submit" class="btn text-white">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <a class="d-flex justify-content-between list-group-item list-group-item-action" asp-route-eventId="@eventModel.EventId" asp-page="EventSingle">
+                                <span>@eventModel.EventName</span>
+                                <div class="d-flex">
+                                    <span>
+                                        @if (!eventModel.EventStartDate.HasValue)
+                                        {
+                                            <text>----</text>
+                                        }
+                                        else
+                                        {
+                                            @eventModel.EventStartDate.GetValueOrDefault().ToString("MM-dd-yyyy")
+                                        }
+                                    </span>
+                                    &nbsp-&nbsp;
+                                    <span>
+                                        @if (!eventModel.EventStartDate.HasValue)
+                                        {
+                                            <text>----</text>
+                                        }
+                                        else
+                                        {
+                                            @eventModel.EventEndDate.GetValueOrDefault().ToString("MM-dd-yyyy")
+                                        }
+                                    </span>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+@*             <div class="offset-md-2 col-md-2">
+                <ul class="list-group list-group-status">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">
+                            <p class="mb-1">All</p>
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">
+                            <p class="mb-1">Pending</p>
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="#">
+                            <p class="mb-1">Complete</p>
+                        </a>
+                    </li>
+                </ul>
+            </div> *@
+        </div>
+    </div>
+
+</div>
